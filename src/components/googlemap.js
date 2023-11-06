@@ -1,11 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const GoogleMap = () => {
+  
+  const [location, setLocation] = useState('New+York'); // Hardcoded location for testing
+  const [latitude, setLatitude] = useState(0);
+const [longitude, setLongitude] = useState(0);
+
+  // Construct the Google Maps URL with the user's entered location
+  const mapUrl = `http://maps.google.com/maps?q=${latitude},${longitude}&z=16&output=embed`;
+
   return (
     <div>
+      {/* <input
+        type="text"
+        placeholder="Enter a location"
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+      /> */}
+    <div style={{margin: '5px'}}>
+    <span>Latitude: </span><input
+        type="text"
+        placeholder="Latitude"
+        value={latitude}
+        onChange={(e) => setLatitude(e.target.value)}
+        
+      />
+
+    <span style={{paddingLeft: '5px'}}>Longitude: </span><input
+        type="text"
+        placeholder="Enter a location"
+        value={longitude}
+        onChange={(e) => setLongitude(e.target.value)}
+      />
+</div>
       <iframe
         title="Google Map"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14759.349571871124!2d91.8434257!3d22.359767899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1699293194999!5m2!1sen!2sbd"
+        src={mapUrl}
         width="600"
         height="450"
         style={{ border: 0 }}
@@ -13,6 +43,7 @@ const GoogleMap = () => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       />
+    
     </div>
   );
 };
