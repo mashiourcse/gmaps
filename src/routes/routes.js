@@ -1,6 +1,9 @@
 import React from 'react'
 import { Routes, Route, Outlet } from "react-router-dom";
 import GoogleMap from '../components/googlemap';
+import { MainPage } from '../pages/MainPage';
+
+
 
 const Home = () => {
   return <div>
@@ -13,6 +16,7 @@ export const AllRoutes = () => {
 
     const allroutes = [
         { url: "map", component: <GoogleMap/>},
+        { url: "main", component: <MainPage/>},
         { url: "/", component: <Home/>}
     ]
   return (

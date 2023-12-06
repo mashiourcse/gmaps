@@ -31,14 +31,7 @@ const GoogleMap = () => {
         value={longitude}
         onChange={(e) => setLongitude(e.target.value)}
       /> */}
-     <input
-        type="text"
-        placeholder="Location"
-        value={location}
-        style={inputStyle} 
-        onChange={(e) => setLocation(e.target.value)}
-        
-      />
+     
 </div>
       <iframe
         title="Google Map"
@@ -50,7 +43,16 @@ const GoogleMap = () => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       />
-    
+      <br>
+      </br>
+    <input
+        type="text"
+        placeholder="Location"
+        value={location}
+        style={inputStyle} 
+        onChange={(e) => setLocation(e.target.value)}
+        
+      />
     </div>
   );
 };
